@@ -1,2 +1,2 @@
-# Quit-Game
-School Project, Quit game.
+# Quiz-Game
+School Project, Quiz game.
