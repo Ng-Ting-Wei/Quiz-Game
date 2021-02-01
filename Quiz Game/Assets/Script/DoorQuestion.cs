@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DoorQuestion : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class DoorQuestion : MonoBehaviour
     private bool istriggered = false;
     Vector3 defaultDoorPosition;
     private int questionNumber;
+    public Text question;
 
     private void Start()
     {
@@ -51,27 +53,33 @@ public class DoorQuestion : MonoBehaviour
             switch (questionNumber)
             {
                 case 5:
-                    print("Which BC did Rome's implement a national army?");
+                    question.text = "Which BC did Rome's implement a national army?";
+                    //print("Which BC did Rome's implement a national army?");
                     //550 BC
                     break;
                 case 4:
-                    print("During the early days of the roman army, which king implemented a Rome's national army?");
+                    question.text = "During the early days of the roman army, which king implemented a Rome's national army?";
+                    //print("During the early days of the roman army, which king implemented a Rome's national army?");
                     //king Servius Tullius
                     break;
                 case 3:
-                    print("During the early days of the roman army, what were the roman light cavalry called?");
+                    question.text= "During the early days of the roman army, what were the roman light cavalry called?";
+                    //print("During the early days of the roman army, what were the roman light cavalry called?");
                     //Equites Celeres
                     break;
                 case 2:
-                    print("Which Bc did Rome conquered gaul");
+                    question.text = "Which Bc did Rome conquered Gaul?";
+                    //print("Which Bc did Rome conquered gaul");
                     //121 BC
                     break;
                 case 1:
-                    print("What was rome's form of government before becoming an empire");
+                    question.text = "What was rome's form of government before becoming an empire?";
+                    //print("What was rome's form of government before becoming an empire");
                     //Republic
                     break;
                 case 0:
-                    print("Which BC did Rome conquered the seas in the Mediterranean");
+                    question.text = "Which BC did Rome conquered the seas in the Mediterranean?";
+                    //print("Which BC did Rome conquered the seas in the Mediterranean");
                     //264 B.C. to 146 B.C.
                     break;
             }
@@ -95,5 +103,6 @@ public class DoorQuestion : MonoBehaviour
             istriggered = false;
             open = false;
         }
+        question.text = "";
     }
 }
