@@ -15,6 +15,7 @@ public class DoorQuestion : MonoBehaviour
     Vector3 defaultDoorPosition;
     private int questionNumber;
     public Text question;
+    public GameObject answers;
 
     private void Start()
     {
@@ -94,6 +95,7 @@ public class DoorQuestion : MonoBehaviour
             open = true;
         }
         questionRandom();
+        answers.active = true;
     }
 
     private void OnTriggerExit(Collider exit)
@@ -104,5 +106,6 @@ public class DoorQuestion : MonoBehaviour
             open = false;
         }
         question.text = "";
+        answers.active = false;
     }
 }
