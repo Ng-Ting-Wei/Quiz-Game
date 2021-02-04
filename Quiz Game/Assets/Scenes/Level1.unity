@@ -818,6 +818,11 @@ PrefabInstance:
       propertyPath: question
       value: 
       objectReference: {fileID: 161110744}
+    - target: {fileID: 1974313812831910807, guid: 5a2f182c7a1529f4d94c29305a98b006,
+        type: 3}
+      propertyPath: answers
+      value: 
+      objectReference: {fileID: 1958542355}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a2f182c7a1529f4d94c29305a98b006, type: 3}
 --- !u!1 &724255156
@@ -1109,6 +1114,11 @@ PrefabInstance:
       propertyPath: question
       value: 
       objectReference: {fileID: 161110744}
+    - target: {fileID: 1974313812831910807, guid: 5a2f182c7a1529f4d94c29305a98b006,
+        type: 3}
+      propertyPath: answers
+      value: 
+      objectReference: {fileID: 1958542355}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a2f182c7a1529f4d94c29305a98b006, type: 3}
 --- !u!1 &868400108
@@ -1846,6 +1856,11 @@ PrefabInstance:
       propertyPath: question
       value: 
       objectReference: {fileID: 161110744}
+    - target: {fileID: 1974313812831910807, guid: 5a2f182c7a1529f4d94c29305a98b006,
+        type: 3}
+      propertyPath: answers
+      value: 
+      objectReference: {fileID: 1958542355}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a2f182c7a1529f4d94c29305a98b006, type: 3}
 --- !u!1 &1840919727 stripped

@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 334, y: 274}
   m_MaxSize: {x: 14004, y: 10024}
   vertical: 0
-  controlID: 150
+  controlID: 144
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 722}
   m_MaxSize: {x: 14004, y: 18072}
   vertical: 1
-  controlID: 42
+  controlID: 32
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 448}
   m_MaxSize: {x: 12008, y: 8048}
   vertical: 0
-  controlID: 43
+  controlID: 33
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 448}
   m_MaxSize: {x: 4002, y: 8048}
   vertical: 1
-  controlID: 131
+  controlID: 68
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -315,8 +315,8 @@ MonoBehaviour:
     y: 0
     width: 225
     height: 673
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 224}
+  m_MaxSize: {x: 4004, y: 4024}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -563,9 +563,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 9e270000
+      m_SelectedIDs: 28290000
       m_LastClickedID: 0
-      m_ExpandedIDs: 3aedffff0ceffffffeefffff1cf7ffff98f8ffffbef8ffffe0f8ffff12f9ffffc4f9ffffe0f9ffff04faffff20faffff44faffff7afaffff6afbffffcc390000f6390000163b00003c3b0000
+      m_ExpandedIDs: 48f6ffff58f8ffff72f8ffffa0f8ffff8afaffff42fbffffdafbffff7c2f0000a62f0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -627,20 +627,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Script
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Script
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Ting Wei\Desktop\ITE School Intern\New folder\Quiz Game
   m_LockTracker:
     m_IsLocked: 1
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c82a0000
-    m_LastClickedID: 10952
-    m_ExpandedIDs: 000000009a290000022a0000c82a0000e82a0000
+    m_SelectedIDs: 782a0000
+    m_LastClickedID: 10872
+    m_ExpandedIDs: 000000000c2900007c290000582a0000782a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -668,7 +668,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 94fbffff
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009a290000022a0000c82a0000e82a0000
+    m_ExpandedIDs: 000000000c2900007c290000582a0000782a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
