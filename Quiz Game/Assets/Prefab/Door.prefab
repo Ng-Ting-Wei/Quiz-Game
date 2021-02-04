@@ -59,6 +59,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorBody: {fileID: 1974313813356887365}
+  question: {fileID: 0}
+  answers: {fileID: 0}
 --- !u!1 &1974313813356887364
 GameObject:
   m_ObjectHideFlags: 0
