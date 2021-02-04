@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         if (countDown < 0)
         {
             countDown = 0f;
-            SceneManager.LoadScene("GameWin");
+            SceneManager.LoadScene("GameLose");
         }
     }
 }
