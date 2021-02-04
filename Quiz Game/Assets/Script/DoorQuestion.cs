@@ -14,10 +14,12 @@ public class DoorQuestion : MonoBehaviour
     private bool istriggered = false;
     Vector3 defaultDoorPosition;
     private int questionNumber;
+    private bool answered;
     public Text question;
 
     private void Start()
     {
+        answered = false;
         if (doorBody)
         {
             defaultDoorPosition = doorBody.localPosition;
@@ -91,7 +93,8 @@ public class DoorQuestion : MonoBehaviour
         if (enter.CompareTag("Player"))
         {
             istriggered = true;
-            open = true;
+            if (answered == true)
+                open = true;
         }
         questionRandom();
     }
