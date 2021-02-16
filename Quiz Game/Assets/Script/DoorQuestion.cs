@@ -19,12 +19,14 @@ public class DoorQuestion : MonoBehaviour
     private bool answered;
     public Text question;
     public GameObject answers;
+    public PlayerControl pc;
+    public Button[] buttons;
 
     private void Start()
     {
-        questionNumberEasy = 0;
-        questionNumberNormal = 0;
-        questionNumberHard = 0;
+        questionNumberEasy = -1;
+        questionNumberNormal = -1;
+        questionNumberHard = -1;
         answered = false;
         if (doorBody)
         {
@@ -57,9 +59,9 @@ public class DoorQuestion : MonoBehaviour
     {
         if (istriggered == true)
         {
-            questionNumberEasy += 0.5f;
-            questionNumberNormal += 0.5f;
-            questionNumberHard += 0.5f;
+            questionNumberEasy += 1f;
+            //questionNumberNormal += 0.5f;
+            //questionNumberHard += 0.5f;
             switch (questionNumberEasy)
             {
                 case 19:
@@ -141,6 +143,7 @@ public class DoorQuestion : MonoBehaviour
                 case 0:
                     question.text = "What is the throat called in scientific terms?";
                     //Neck, Windpipe, Oesophagus**, Collarbone
+
                     break;
             }
             switch(questionNumberNormal)
@@ -317,8 +320,13 @@ public class DoorQuestion : MonoBehaviour
         if (enter.CompareTag("Player"))
         {
             istriggered = true;
+            pc.froze = true;
             if (answered == true)
+            {
                 open = true;
+                pc.froze = false;
+            }
+
         }
         questionRandom();
         answers.active = true;
