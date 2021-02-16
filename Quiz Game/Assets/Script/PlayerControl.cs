@@ -10,15 +10,20 @@ public class PlayerControl : MonoBehaviour
     private Vector3 playerVelocity;
     private CharacterController controller;
     public Transform cam;
+    public bool froze;
 
     private void Start()
     {
+        froze = false;
         controller = gameObject.AddComponent<CharacterController>();
     }
 
     private void Update()
     {
-        playerMovement();
+        if (froze == false)
+        {
+            playerMovement();
+        }
     }
 
     private void playerMovement()
