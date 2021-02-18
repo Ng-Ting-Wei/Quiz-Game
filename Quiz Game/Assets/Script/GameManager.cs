@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void multipleChoice()
+    public void Answering(int option)
     {
         
     }
