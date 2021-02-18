@@ -19,9 +19,18 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         timeCountdown();
+        testing();
     }
 
-    private void scoringPoints()
+    private void testing()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            countDown -= 50f;
+        }
+    }
+
+    private void multipleChoice()
     {
         
     }

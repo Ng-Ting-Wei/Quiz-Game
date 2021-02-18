@@ -65,6 +65,7 @@
     <Compile Include="Assets\Script\GameManager.cs" />
     <Compile Include="Assets\Script\PlayerControl.cs" />
     <Compile Include="Assets\Script\SceneChanger.cs" />
+    <Compile Include="Assets\Script\SceneTransition.cs" />
     <Compile Include="Assets\Script\SFX.cs" />
     <Reference Include="Cinemachine">
       <HintPath>C:/Users/Ting Wei/Desktop/ITE School Intern/Quiz Game/Library/ScriptAssemblies/Cinemachine.dll</HintPath>

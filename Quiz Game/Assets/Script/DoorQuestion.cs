@@ -16,9 +16,6 @@ public class DoorQuestion : MonoBehaviour
     private float questionNumberEasy;
     private float questionNumberNormal;
     private float questionNumberHard;
-    public bool easyDifficulty;
-    public bool normalDifficulty;
-    public bool hardDifficulty;
     private bool answered;
     public Text question;
     public GameObject answers;
@@ -62,12 +59,9 @@ public class DoorQuestion : MonoBehaviour
     {
         if (istriggered == true)
         {
-            if(easyDifficulty == true)
-                questionNumberEasy += 1f;
-            if(normalDifficulty == true)
-                questionNumberNormal += 1f;
-            if(hardDifficulty == true)
-                questionNumberHard += 1f;
+            questionNumberEasy += 1f;
+            //questionNumberNormal += 0.5f;
+            //questionNumberHard += 0.5f;
             switch (questionNumberEasy)
             {
                 case 19:
@@ -332,6 +326,7 @@ public class DoorQuestion : MonoBehaviour
                 open = true;
                 pc.froze = false;
             }
+
         }
         questionRandom();
         answers.active = true;

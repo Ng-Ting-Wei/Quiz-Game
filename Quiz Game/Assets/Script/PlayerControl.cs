@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -10,10 +9,10 @@ public class PlayerControl : MonoBehaviour
     private float turnSmoothVelocity;
     private Vector3 playerVelocity;
     private CharacterController controller;
-    private Animator anim;
-    private Rigidbody rb;
     public Transform cam;
     public bool froze;
+    Animator anim;
+    Rigidbody rb;
 
     private void Start()
     {
@@ -51,13 +50,4 @@ public class PlayerControl : MonoBehaviour
             anim.SetInteger("Walk", 0);
         }
     }
-
-    private void OnTriggerEnter(Collider end)
-    {
-        if (end.CompareTag("EndGoal"))
-        {
-            SceneManager.LoadScene("GameWin");
-        }
-    }
-
 }
