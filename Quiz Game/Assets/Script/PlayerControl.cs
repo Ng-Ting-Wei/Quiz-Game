@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PlayerControl : MonoBehaviour
     private float turnSmoothVelocity;
     private Vector3 playerVelocity;
     private CharacterController controller;
+    private Animator anim;
+    private Rigidbody rb;
     public Transform cam;
     public bool froze;
 
@@ -16,6 +19,8 @@ public class PlayerControl : MonoBehaviour
     {
         froze = false;
         controller = gameObject.AddComponent<CharacterController>();
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
@@ -37,9 +42,22 @@ public class PlayerControl : MonoBehaviour
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
-
+            anim.SetInteger("Walk", 1);
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * playerSpeed * Time.deltaTime);
         }
+        else
+        {
+            anim.SetInteger("Walk", 0);
+        }
     }
+
+    private void OnTriggerEnter(Collider end)
+    {
+        if (end.CompareTag("EndGoal"))
+        {
+            SceneManager.LoadScene("GameWin");
+        }
+    }
+
 }
