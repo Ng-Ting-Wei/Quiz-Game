@@ -21,6 +21,7 @@ public class DoorQuestion : MonoBehaviour
     public GameObject answers;
     public PlayerControl pc;
     public Button[] buttons;
+    public int correct;
 
     private void Start()
     {
@@ -67,83 +68,182 @@ public class DoorQuestion : MonoBehaviour
                 case 19:
                     question.text = "What is the full name of the UNSC?";
                     //United Nations Space Command, United Nations Security Council**, United Nations Space Council, United Nations Security Command
+                    buttons[0].GetComponentInChildren<Text>().text = "United Nations Space Command";
+                    buttons[1].GetComponentInChildren<Text>().text = "United Nations Security Council"; //correct
+                    buttons[2].GetComponentInChildren<Text>().text = "United Nations Space Council";
+                    buttons[3].GetComponentInChildren<Text>().text = "United Nations Security Command";
+                    correct = 1;
                     break;
                 case 18:
                     question.text = "Which of the following is not a province of America?";
-                    //Nevada, Pennsylvania, Virginia, Quebec
+                    //Nevada, Pennsylvania, Virginia, Quebec**
+                    buttons[0].GetComponentInChildren<Text>().text = "Nevada";
+                    buttons[1].GetComponentInChildren<Text>().text = "Pennsylvania";
+                    buttons[2].GetComponentInChildren<Text>().text = "Virginia";
+                    buttons[3].GetComponentInChildren<Text>().text = "Quebec"; //correct
+                    correct = 3;
                     break;
                 case 17:
                     question.text = "What is the Galaxy in which Earth resides in called?";
                     //The Galactic Federation, Guardians Of The Galaxy, The Big Bang, The Milky Way**
+                    buttons[0].GetComponentInChildren<Text>().text = "The Galactic Federation";
+                    buttons[1].GetComponentInChildren<Text>().text = "Guardians Of The Galaxy";
+                    buttons[2].GetComponentInChildren<Text>().text = "The Big Bang";
+                    buttons[3].GetComponentInChildren<Text>().text = "The Milky Way"; //correct
+                    correct = 3;
                     break;
                 case 16:
                     question.text = "Which of the following is not grown from a tree?";
-                    //Lime, Banana, Lemon, Watermelon
+                    //Lime, Banana, Lemon, Watermelon**
+                    buttons[0].GetComponentInChildren<Text>().text = "Lime";
+                    buttons[1].GetComponentInChildren<Text>().text = "Banana";
+                    buttons[2].GetComponentInChildren<Text>().text = "Lemon";
+                    buttons[3].GetComponentInChildren<Text>().text = "Watermelon"; //correct
+                    correct = 3;
                     break;
                 case 15:
                     question.text = "What is D&D called in full?";
                     //Dungeon & Dragons**, Dawn & Drawing, Drink & Driving, Dove & Drove
+                    buttons[0].GetComponentInChildren<Text>().text = "Dungeon & Dragons"; //correct
+                    buttons[1].GetComponentInChildren<Text>().text = "Dawn & Drawing";
+                    buttons[2].GetComponentInChildren<Text>().text = "Drink & Driving";
+                    buttons[3].GetComponentInChildren<Text>().text = "Dove & Drove"; 
+                    correct = 0;
                     break;
                 case 14:
                     question.text = "What do plants need not to survive?";
                     //Food, Water, Sunlight, Leaves**
+                    buttons[0].GetComponentInChildren<Text>().text = "Food";
+                    buttons[1].GetComponentInChildren<Text>().text = "Water";
+                    buttons[2].GetComponentInChildren<Text>().text = "Sunlight";
+                    buttons[3].GetComponentInChildren<Text>().text = "Leaves"; //correct
+                    correct = 3;
                     break;
                 case 13:
                     question.text = "What do you call a land surrounded by water?";
                     //Land, Island**, Sea, Floating Castle
+                    buttons[0].GetComponentInChildren<Text>().text = "Land";
+                    buttons[1].GetComponentInChildren<Text>().text = "Island"; //correct
+                    buttons[2].GetComponentInChildren<Text>().text = "Sea";
+                    buttons[3].GetComponentInChildren<Text>().text = "Floating Castle";
+                    correct = 3;
                     break;
                 case 12:
                     question.text = "When is Singapore's National Day?";
                     //Monday, 8 August**/ Monday, 7 August/ Monday, 10 August/ Monday, 9 August
+                    buttons[0].GetComponentInChildren<Text>().text = "8th August"; //correct
+                    buttons[1].GetComponentInChildren<Text>().text = "7th August";
+                    buttons[2].GetComponentInChildren<Text>().text = "10th August";
+                    buttons[3].GetComponentInChildren<Text>().text = "9th August";
+                    correct = 0;
                     break;
                 case 11:
                     question.text = "What planet do we live on?";
                     //Earth**, Singapore, Mars, Mercury
+                    buttons[0].GetComponentInChildren<Text>().text = "Earth"; //correct
+                    buttons[1].GetComponentInChildren<Text>().text = "Singapore";
+                    buttons[2].GetComponentInChildren<Text>().text = "Mars";
+                    buttons[3].GetComponentInChildren<Text>().text = "Mercury";
+                    correct = 0;
                     break;
                 case 10:
                     question.text = "Where do birds usually nest?";
                     //Trees, Bushes, Roof, All of the above**
+                    buttons[0].GetComponentInChildren<Text>().text = "Trees";
+                    buttons[1].GetComponentInChildren<Text>().text = "Bushes";
+                    buttons[2].GetComponentInChildren<Text>().text = "Roof";
+                    buttons[3].GetComponentInChildren<Text>().text = "All of the above"; //correct
+                    correct = 3;
                     break;
                 case 9:
                     question.text = "What are the 3 states of matter?";
                     //Solid, Liquid, Air/ Heat, Cool, Warm/ Ice, Water, Oxygen/ Solid, Liquid, Gas**
+                    buttons[0].GetComponentInChildren<Text>().text = "Solid, Liquid, Air";
+                    buttons[1].GetComponentInChildren<Text>().text = "Heat, Cool, Warm";
+                    buttons[2].GetComponentInChildren<Text>().text = "Ice, Water, Oxygen";
+                    buttons[3].GetComponentInChildren<Text>().text = "Solid, Liquid, Gas"; //correct
+                    correct = 3;
                     break;
                 case 8:
                     question.text = "What is air mostly composed of?";
                     //Nitrogen**, Oxygen, Carbon Dioxide, argon
+                    buttons[0].GetComponentInChildren<Text>().text = "Nitrogen"; //correct
+                    buttons[1].GetComponentInChildren<Text>().text = "Oxygen";
+                    buttons[2].GetComponentInChildren<Text>().text = "Carbon Dioxide";
+                    buttons[3].GetComponentInChildren<Text>().text = "Argon";
+                    correct = 0;
                     break;
                 case 7:
                     question.text = "What do humans breathe?";
                     //Carbon Dioxide, Oxygen**, Air, Gas
+                    buttons[0].GetComponentInChildren<Text>().text = "Carbon Dioxide";
+                    buttons[1].GetComponentInChildren<Text>().text = "Oxygen"; //correct
+                    buttons[2].GetComponentInChildren<Text>().text = "Air";
+                    buttons[3].GetComponentInChildren<Text>().text = "Gas";
+                    correct = 1;
                     break;
                 case 6:
                     question.text = "What do you call the leftover value of the division of an equation?";
                     //Reminder, Remember, Remainder**, What is math?
+                    buttons[0].GetComponentInChildren<Text>().text = "Reminder";
+                    buttons[1].GetComponentInChildren<Text>().text = "Remember"; 
+                    buttons[2].GetComponentInChildren<Text>().text = "Remainder"; //correct
+                    buttons[3].GetComponentInChildren<Text>().text = "What is math?";
+                    correct = 2;
                     break;
                 case 5:
                     question.text = "How many stars are there on the Singapore flag?";
                     //4 stars, 7 stars, 5 stars**, What are stars
+                    buttons[0].GetComponentInChildren<Text>().text = "4 stars";
+                    buttons[1].GetComponentInChildren<Text>().text = "7 stars";
+                    buttons[2].GetComponentInChildren<Text>().text = "5 stars"; //correct
+                    buttons[3].GetComponentInChildren<Text>().text = "What are stars";
+                    correct = 2;
                     break;
                 case 4:
                     question.text = "What are the three primary colors?";
                     //Red, Yellow, Green/ Green, White, Black/ Red, Blue, Yellow**/ Black, White, Grey
+                    buttons[0].GetComponentInChildren<Text>().text = "Red, Yellow, Green";
+                    buttons[1].GetComponentInChildren<Text>().text = "Green, White, Black";
+                    buttons[2].GetComponentInChildren<Text>().text = "Red, Blue, Yellow"; //correct
+                    buttons[3].GetComponentInChildren<Text>().text = "Black, White, Grey";
+                    correct = 2;
                     break;
                 case 3:
                     question.text= "Who is Singapore’s current Prime Minister?";
                     //Lee Kuan Yew, Lee Hsien Loong**, Lee Hsien Yang, The current one
+                    buttons[0].GetComponentInChildren<Text>().text = "Lee Kuan Yew";
+                    buttons[1].GetComponentInChildren<Text>().text = "Lee Hsien Loong"; //correct
+                    buttons[2].GetComponentInChildren<Text>().text = "Lee Hsien Yang"; 
+                    buttons[3].GetComponentInChildren<Text>().text = "The current one";
+                    correct = 1;
                     break;
                 case 2:
                     question.text = "What is Singapore’s National Anthem called?";
                     //Singapura, Onward Singapore**, Singapura Forward, Onward Singapura
+                    buttons[0].GetComponentInChildren<Text>().text = "Singapura";
+                    buttons[1].GetComponentInChildren<Text>().text = "Onward Singapore"; //correct
+                    buttons[2].GetComponentInChildren<Text>().text = "Singapura Forward";
+                    buttons[3].GetComponentInChildren<Text>().text = "Onward Singapura";
+                    correct = 1;
                     break;
                 case 1:
                     question.text = "What is 1+1??";
                     //Math no good, 2, 3**, 4
+                    buttons[0].GetComponentInChildren<Text>().text = "Math no good";
+                    buttons[1].GetComponentInChildren<Text>().text = "2"; //correct
+                    buttons[2].GetComponentInChildren<Text>().text = "3";
+                    buttons[3].GetComponentInChildren<Text>().text = "4";
+                    correct = 1;
                     break;
                 case 0:
                     question.text = "What is the throat called in scientific terms?";
                     //Neck, Windpipe, Oesophagus**, Collarbone
-
+                    buttons[0].GetComponentInChildren<Text>().text = "Neck";
+                    buttons[1].GetComponentInChildren<Text>().text = "Windpipe";
+                    buttons[2].GetComponentInChildren<Text>().text = "Oesophagus"; //correct
+                    buttons[3].GetComponentInChildren<Text>().text = "Collarbone";
+                    correct = 2;
                     break;
             }
             switch(questionNumberNormal)
@@ -312,6 +412,8 @@ public class DoorQuestion : MonoBehaviour
                     //Roman Republic**, Roman Kingdom, Roman Empire, Roman State
                     break;
             }
+
+
         }
     }
 
