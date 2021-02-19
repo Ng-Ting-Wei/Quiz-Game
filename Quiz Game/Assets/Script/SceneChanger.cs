@@ -16,12 +16,7 @@ public class SceneChanger : MonoBehaviour
         Hard = false;
     }
 
-    void Update()
-    {
-        
-    }
-
-    public void restart(string level)
+    public void LoadLevel(string level)
     {
         SceneManager.LoadScene(level);
     }
