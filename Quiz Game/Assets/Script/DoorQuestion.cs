@@ -16,12 +16,13 @@ public class DoorQuestion : MonoBehaviour
     private float questionNumberEasy;
     private float questionNumberNormal;
     private float questionNumberHard;
-    private bool answered;
+    private bool answered=false;
     public Text question;
     public GameObject answers;
     public PlayerControl pc;
     public Button[] buttons;
     public int correct;
+    public int option;
 
     private void Start()
     {
@@ -60,7 +61,7 @@ public class DoorQuestion : MonoBehaviour
     {
         if (istriggered == true)
         {
-            questionNumberEasy += 1f;
+            questionNumberEasy = (Mathf.Floor(Random.Range(0f,20f)));
             //questionNumberNormal += 0.5f;
             //questionNumberHard += 0.5f;
             switch (questionNumberEasy)
@@ -419,22 +420,28 @@ public class DoorQuestion : MonoBehaviour
 
     private void OnTriggerEnter(Collider enter)
     {
-        if (enter.CompareTag("Player"))
+        PlayerPrefs.SetInt("option", 5);
+        if (enter.CompareTag("Player") && (answered == false))
         {
             istriggered = true;
             pc.froze = true;
-            if (answered == true)
-            {
-                open = true;
-                pc.froze = false;
-            }
-
+            questionRandom();
+            answers.active = true;
         }
-        questionRandom();
-        answers.active = true;
     }
-
-    private void OnTriggerExit(Collider exit)
+    private void OnTriggerStay(Collider other)
+    {
+        option = PlayerPrefs.GetInt("option");
+        if (option == correct)
+        {
+            answered = true;
+            open = true;
+            pc.froze = false;
+            answers.active = false;
+            question.text = "";
+        }
+    }
+    /*private void OnTriggerExit(Collider exit)
     {
         if (exit.CompareTag("Player"))
         {
@@ -443,5 +450,5 @@ public class DoorQuestion : MonoBehaviour
         }
         question.text = "";
         answers.active = false;
-    }
+    }*/
 }
