@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -48,6 +49,14 @@ public class PlayerControl : MonoBehaviour
         else
         {
             anim.SetInteger("Walk", 0);
+        }
+    }
+
+    private void OnTriggerEnter(Collider end)
+    {
+        if (end.CompareTag("EndGoal"))
+        {
+            SceneManager.LoadScene("GameWin");
         }
     }
 }
