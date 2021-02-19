@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] buttons;
     public Text[] buttontxt;
-    private string[] choice;
 
     private void Update()
     {
@@ -32,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     public void Answering(int option)
     {
-        
+        PlayerPrefs.SetInt("option",option);
     }
 
     private void timeCountdown()
