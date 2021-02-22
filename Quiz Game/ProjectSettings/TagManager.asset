@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Door
   - EndGoal
+  - GameManager
   layers:
   - Default
   - TransparentFX

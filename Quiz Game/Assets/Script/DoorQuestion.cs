@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class DoorQuestion : MonoBehaviour
 {
+    public GameManager GM;
+
     private enum OpenDirection { x, y, z}
     private OpenDirection direction = OpenDirection.y;
     private float openDistance = 3f;
@@ -26,6 +28,8 @@ public class DoorQuestion : MonoBehaviour
 
     private void Start()
     {
+        GM = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+
         questionNumberEasy = -1;
         questionNumberNormal = -1;
         questionNumberHard = -1;
@@ -59,11 +63,9 @@ public class DoorQuestion : MonoBehaviour
 
     private void questionRandom()
     {
-        if (istriggered == true)
+        if (istriggered == true && PlayerPrefs.GetInt("CheckDifficulty", 0) == 0)
         {
-            questionNumberEasy = (Mathf.Floor(Random.Range(0f,20f)));
-            questionNumberNormal =(Mathf.Floor(Random.Range(0f,20f)));
-            questionNumberHard = (Mathf.Floor(Random.Range(0f, 20f)));
+            questionNumberEasy = (Mathf.Floor(Random.Range(0f, 20f)));
             switch (questionNumberEasy)
             {
                 case 19:
@@ -108,7 +110,7 @@ public class DoorQuestion : MonoBehaviour
                     buttons[0].GetComponentInChildren<Text>().text = "Dungeon & Dragons"; //correct
                     buttons[1].GetComponentInChildren<Text>().text = "Dawn & Drawing";
                     buttons[2].GetComponentInChildren<Text>().text = "Drink & Driving";
-                    buttons[3].GetComponentInChildren<Text>().text = "Dove & Drove"; 
+                    buttons[3].GetComponentInChildren<Text>().text = "Dove & Drove";
                     correct = 0;
                     break;
                 case 14:
@@ -187,7 +189,7 @@ public class DoorQuestion : MonoBehaviour
                     question.text = "What do you call the leftover value of the division of an equation?";
                     //Reminder, Remember, Remainder**, What is math?
                     buttons[0].GetComponentInChildren<Text>().text = "Reminder";
-                    buttons[1].GetComponentInChildren<Text>().text = "Remember"; 
+                    buttons[1].GetComponentInChildren<Text>().text = "Remember";
                     buttons[2].GetComponentInChildren<Text>().text = "Remainder"; //correct
                     buttons[3].GetComponentInChildren<Text>().text = "What is math?";
                     correct = 2;
@@ -211,11 +213,11 @@ public class DoorQuestion : MonoBehaviour
                     correct = 2;
                     break;
                 case 3:
-                    question.text= "Who is Singapore’s current Prime Minister?";
+                    question.text = "Who is Singapore’s current Prime Minister?";
                     //Lee Kuan Yew, Lee Hsien Loong**, Lee Hsien Yang, The current one
                     buttons[0].GetComponentInChildren<Text>().text = "Lee Kuan Yew";
                     buttons[1].GetComponentInChildren<Text>().text = "Lee Hsien Loong"; //correct
-                    buttons[2].GetComponentInChildren<Text>().text = "Lee Hsien Yang"; 
+                    buttons[2].GetComponentInChildren<Text>().text = "Lee Hsien Yang";
                     buttons[3].GetComponentInChildren<Text>().text = "The current one";
                     correct = 1;
                     break;
@@ -247,14 +249,18 @@ public class DoorQuestion : MonoBehaviour
                     correct = 2;
                     break;
             }
-            switch(questionNumberNormal)
+        }
+        else if (istriggered == true && PlayerPrefs.GetInt("CheckDifficulty", 1) == 1)
+        {
+            questionNumberNormal = (Mathf.Floor(Random.Range(0f, 20f)));
+            switch (questionNumberNormal)
             {
                 case 19:
                     question.text = "What does one have but can never obtain?";
                     //Faith**, Books, Desire, Looks
                     buttons[0].GetComponentInChildren<Text>().text = "Faith"; //correct
                     buttons[1].GetComponentInChildren<Text>().text = "Books";
-                    buttons[2].GetComponentInChildren<Text>().text = "Desire"; 
+                    buttons[2].GetComponentInChildren<Text>().text = "Desire";
                     buttons[3].GetComponentInChildren<Text>().text = "Looks";
                     correct = 0;
                     break;
@@ -288,7 +294,7 @@ public class DoorQuestion : MonoBehaviour
                 case 15:
                     question.text = "Which of the following items do most people have?";
                     //Coins, Phones, Cards, Clothes**
-                    buttons[0].GetComponentInChildren<Text>().text = "Coins"; 
+                    buttons[0].GetComponentInChildren<Text>().text = "Coins";
                     buttons[1].GetComponentInChildren<Text>().text = "Phones";
                     buttons[2].GetComponentInChildren<Text>().text = "Cards";
                     buttons[3].GetComponentInChildren<Text>().text = "Clothes"; //correct
@@ -300,7 +306,7 @@ public class DoorQuestion : MonoBehaviour
                     buttons[0].GetComponentInChildren<Text>().text = "Food";
                     buttons[1].GetComponentInChildren<Text>().text = "Light";
                     buttons[2].GetComponentInChildren<Text>().text = "Cells";//correct
-                    buttons[3].GetComponentInChildren<Text>().text = "Electrum"; 
+                    buttons[3].GetComponentInChildren<Text>().text = "Electrum";
                     correct = 2;
                     break;
                 case 13:
@@ -343,7 +349,7 @@ public class DoorQuestion : MonoBehaviour
                     question.text = "Which province is part of Europe?";
                     //Singapore, Texas, Provence**, Japan
                     buttons[0].GetComponentInChildren<Text>().text = "Singapore";
-                    buttons[1].GetComponentInChildren<Text>().text = "Texas"; 
+                    buttons[1].GetComponentInChildren<Text>().text = "Texas";
                     buttons[2].GetComponentInChildren<Text>().text = "Provence"; //correct
                     buttons[3].GetComponentInChildren<Text>().text = "Japan";
                     correct = 2;
@@ -353,7 +359,7 @@ public class DoorQuestion : MonoBehaviour
                     //2 November 1932**, 5 November 1932, 16 November 1932, was there really an emu war?
                     buttons[0].GetComponentInChildren<Text>().text = "2 November 1932";//correct
                     buttons[1].GetComponentInChildren<Text>().text = "5 November 1932";
-                    buttons[2].GetComponentInChildren<Text>().text = "16 November 1932"; 
+                    buttons[2].GetComponentInChildren<Text>().text = "16 November 1932";
                     buttons[3].GetComponentInChildren<Text>().text = "was there really an emu war?";
                     correct = 1;
                     break;
@@ -430,7 +436,11 @@ public class DoorQuestion : MonoBehaviour
                     correct = 3;
                     break;
             }
-            switch(questionNumberHard)
+        }
+        else if (istriggered == true && PlayerPrefs.GetInt("CheckDifficulty", 2) == 2)
+        {
+            questionNumberHard = (Mathf.Floor(Random.Range(0f, 20f)));
+            switch (questionNumberHard)
             {
                 case 19:
                     question.text = "Which company made halo?";
@@ -457,7 +467,7 @@ public class DoorQuestion : MonoBehaviour
                     buttons[1].GetComponentInChildren<Text>().text = "Matters can be converted";
                     buttons[2].GetComponentInChildren<Text>().text = "Matters have 3 states";
                     buttons[3].GetComponentInChildren<Text>().text = "Matter can change";
-                    correct = 0 ;
+                    correct = 0;
                     break;
                 case 16:
                     question.text = "Which of the following is true about matter?";
@@ -474,7 +484,7 @@ public class DoorQuestion : MonoBehaviour
                     buttons[0].GetComponentInChildren<Text>().text = "March 1941"; //correct
                     buttons[1].GetComponentInChildren<Text>().text = "March 1932";
                     buttons[2].GetComponentInChildren<Text>().text = "May 1942";
-                    buttons[3].GetComponentInChildren<Text>().text = "December 1941"; 
+                    buttons[3].GetComponentInChildren<Text>().text = "December 1941";
                     correct = 0;
                     break;
                 case 14:
@@ -519,7 +529,7 @@ public class DoorQuestion : MonoBehaviour
                     buttons[0].GetComponentInChildren<Text>().text = "Smashed through the Maginot Line";
                     buttons[1].GetComponentInChildren<Text>().text = "Hit the from behind Beans";
                     buttons[2].GetComponentInChildren<Text>().text = "Invaded through Belgium"; //correct
-                    buttons[3].GetComponentInChildren<Text>().text = "Attack from Italy"; 
+                    buttons[3].GetComponentInChildren<Text>().text = "Attack from Italy";
                     correct = 2;
                     break;
                 case 9:
@@ -537,7 +547,7 @@ public class DoorQuestion : MonoBehaviour
                     buttons[0].GetComponentInChildren<Text>().text = "22 February 1920";
                     buttons[1].GetComponentInChildren<Text>().text = "19 February 1920";
                     buttons[2].GetComponentInChildren<Text>().text = "24 February 1920";//correct
-                    buttons[3].GetComponentInChildren<Text>().text = "22 February 1922"; 
+                    buttons[3].GetComponentInChildren<Text>().text = "22 February 1922";
                     correct = 2;
                     break;
                 case 7:
@@ -564,7 +574,7 @@ public class DoorQuestion : MonoBehaviour
                     buttons[0].GetComponentInChildren<Text>().text = "47 CE";
                     buttons[1].GetComponentInChildren<Text>().text = "43 AD";//correct
                     buttons[2].GetComponentInChildren<Text>().text = "26 BC";
-                    buttons[3].GetComponentInChildren<Text>().text = "35 CE"; 
+                    buttons[3].GetComponentInChildren<Text>().text = "35 CE";
                     correct = 1;
                     break;
                 case 4:
@@ -600,7 +610,7 @@ public class DoorQuestion : MonoBehaviour
                     buttons[0].GetComponentInChildren<Text>().text = "Foot Squire";
                     buttons[1].GetComponentInChildren<Text>().text = "Infantry";
                     buttons[2].GetComponentInChildren<Text>().text = "Hastati";//correct
-                    buttons[3].GetComponentInChildren<Text>().text = "Heavy Infantry"; 
+                    buttons[3].GetComponentInChildren<Text>().text = "Heavy Infantry";
                     correct = 2;
                     break;
                 case 0:
@@ -613,9 +623,7 @@ public class DoorQuestion : MonoBehaviour
                     correct = 0;
                     break;
             }
-
-
-        }
+        }      
     }
 
     private void OnTriggerEnter(Collider enter)
@@ -632,13 +640,15 @@ public class DoorQuestion : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         option = PlayerPrefs.GetInt("option");
-        if (option == correct)
-        {
+        if (option == correct && PlayerPrefs.GetInt("CheckDifficulty", 0) == 0)
+        {            
             answered = true;
             open = true;
             pc.froze = false;
             answers.active = false;
             question.text = "";
+            GM.score += 5;
+            return;
         }
     }
     /*private void OnTriggerExit(Collider exit)
