@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private float countDown = 180f;
-    private int score;
+    public float countDown = 0f;
+    public int score = 0;
+    public float highscoretime;
 
     public Text scoretxt;
     public Text timetxt;
@@ -15,8 +16,25 @@ public class GameManager : MonoBehaviour
     public GameObject[] buttons;
     public Text[] buttontxt;
 
-    private void Update()
+    void Start()
     {
+        if(PlayerPrefs.GetInt("CheckDifficulty", 0) == 0)
+        {
+            countDown = 360f;
+        }
+        else if (PlayerPrefs.GetInt("CheckDifficulty", 1) == 1)
+        {
+            countDown = 240f;
+        }
+        else if (PlayerPrefs.GetInt("CheckDifficulty", 2) == 2)
+        {
+            countDown = 180f;
+        }
+    }
+
+    void Update()
+    {
+        scoretxt.text = score.ToString();
         timeCountdown();
         testing();
     }

@@ -223,8 +223,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.000072479}
-  m_SizeDelta: {x: 1053, y: 459.99976}
+  m_AnchoredPosition: {x: -29.1, y: -5.3}
+  m_SizeDelta: {x: 1669.4725, y: 843.4394}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &355971065
 MonoBehaviour:
@@ -295,7 +295,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12, y: 102}
+  m_AnchoredPosition: {x: 0, y: 74.064}
   m_SizeDelta: {x: 794.8176, y: 311.87082}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &514885456
@@ -335,7 +335,13 @@ MonoBehaviour:
 
     you have got to answer them correctly before a door opens
 
-    i wish you luck on getting out of this maze too...'
+    i wish you luck on getting out of this maze too...
+
+    also...remember...if you ever feel breathless and lost, press esc...
+
+    take a breather and retrace your steps and analyze the questions...
+
+    good luck in escaping as well...'
 --- !u!222 &514885457
 CanvasRenderer:
   m_ObjectHideFlags: 0

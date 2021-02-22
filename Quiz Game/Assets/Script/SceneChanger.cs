@@ -5,15 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
-    public bool Easy;
-    public bool Normal;
-    public bool Hard;
-
     void Start()
     {
-        Easy = false;
-        Normal = false;
-        Hard = false;
+
     }
 
     public void LoadLevel(string level)
@@ -33,7 +27,7 @@ public class SceneChanger : MonoBehaviour
 
     public void Level1()
     {
-        Easy = true;
+        PlayerPrefs.SetInt("CheckDifficulty", 0);
         SceneManager.LoadScene("Level1");
     }
 
@@ -49,13 +43,13 @@ public class SceneChanger : MonoBehaviour
 
     public void Level2()
     {
-        Normal = true;
+        PlayerPrefs.SetInt("CheckDifficulty", 1);
         SceneManager.LoadScene("Level2");
     }
 
     public void Level3()
     {
-        Hard = true;
+        PlayerPrefs.SetInt("CheckDifficulty", 2);
         SceneManager.LoadScene("Level3");
     }
 
