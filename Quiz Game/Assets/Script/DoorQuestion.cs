@@ -634,7 +634,7 @@ public class DoorQuestion : MonoBehaviour
             istriggered = true;
             pc.froze = true;
             questionRandom();
-            answers.active = true;
+            answers.SetActive(true);
         }
     }
     private void OnTriggerStay(Collider other)
@@ -642,12 +642,15 @@ public class DoorQuestion : MonoBehaviour
         option = PlayerPrefs.GetInt("option");
         if (option == correct && PlayerPrefs.GetInt("CheckDifficulty", 0) == 0)
         {            
+            if (answered == false)
+            {
+            GM.score += 5;
             answered = true;
+            }
             open = true;
             pc.froze = false;
-            answers.active = false;
+            answers.SetActive(false);
             question.text = "";
-            GM.score += 5;
             return;
         }
     }
