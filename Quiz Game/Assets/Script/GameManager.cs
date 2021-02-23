@@ -88,8 +88,8 @@ public class GameManager : MonoBehaviour
 
     public void TrackHighscore()
     {
-        scoretxt.text = score.ToString();
+        scoretxt.text = (score).ToString("0");
         ScoreHighscore = score;
-        PlayerPrefs.SetInt("ScoreHighscore", 0);
+        PlayerPrefs.SetInt("ScoreHighscore", ScoreHighscore);
     }
 }
