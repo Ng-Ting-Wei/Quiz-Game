@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
         countDown -= Time.deltaTime;
         timetxt.text = (countDown).ToString("0");
         finaltime = countDown;
-        if(finaltime < highscoretime)
+        if(finaltime > highscoretime)
         {
             PlayerPrefs.SetFloat("hc", finaltime);
         }
