@@ -12,7 +12,7 @@ public class Highscore : MonoBehaviour
     void Start()
     {
         HighscoreText.text = PlayerPrefs.GetFloat("hc").ToString("0");
-        ScoreHighscoreText.text = PlayerPrefs.GetInt("ScoreHighscore", 0).ToString();
+        ScoreHighscoreText.text = PlayerPrefs.GetInt("ScoreHighscore", 0).ToString("0");
     }
 
     // Update is called once per frame
