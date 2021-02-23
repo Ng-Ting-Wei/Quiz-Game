@@ -653,6 +653,32 @@ public class DoorQuestion : MonoBehaviour
             question.text = "";
             return;
         }
+        else if (option == correct && PlayerPrefs.GetInt("CheckDifficulty", 1) == 1)
+        {
+            if (answered == false)
+            {
+                GM.score += 50;
+                answered = true;
+            }
+            open = true;
+            pc.froze = false;
+            answers.SetActive(false);
+            question.text = "";
+            return;
+        }
+        else if (option == correct && PlayerPrefs.GetInt("CheckDifficulty", 2) == 2)
+        {
+            if (answered == false)
+            {
+                GM.score += 500;
+                answered = true;
+            }
+            open = true;
+            pc.froze = false;
+            answers.SetActive(false);
+            question.text = "";
+            return;
+        }
     }
     /*private void OnTriggerExit(Collider exit)
     {

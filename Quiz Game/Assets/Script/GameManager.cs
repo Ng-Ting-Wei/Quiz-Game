@@ -7,8 +7,11 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public float countDown = 0f;
-    public int score = 0;
+    public float finaltime;
     public float highscoretime;
+
+    public int score = 0;
+    public int ScoreHighscore;
 
     public Text scoretxt;
     public Text timetxt;
@@ -18,6 +21,20 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        if(PlayerPrefs.HasKey("hc"))
+        {
+            highscoretime = PlayerPrefs.GetFloat("hc");
+        }
+        else
+        {
+            highscoretime = 999;
+        }
+
+        if(PlayerPrefs.HasKey("ScoreHighscore"))
+        {
+            ScoreHighscore = PlayerPrefs.GetInt("ScoreHighscore", 0);
+        }
+
         if(PlayerPrefs.GetInt("CheckDifficulty", 0) == 0)
         {
             countDown = 360f;
@@ -34,7 +51,8 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        scoretxt.text = score.ToString();
+        TrackHighscore();
+
         timeCountdown();
         testing();
     }
@@ -56,10 +74,22 @@ public class GameManager : MonoBehaviour
     {
         countDown -= Time.deltaTime;
         timetxt.text = (countDown).ToString("0");
+        finaltime = countDown;
+        if(finaltime < highscoretime)
+        {
+            PlayerPrefs.SetFloat("hc", finaltime);
+        }
         if (countDown < 0)
         {
             countDown = 0f;
             SceneManager.LoadScene("GameLose");
         }
+    }
+
+    public void TrackHighscore()
+    {
+        scoretxt.text = score.ToString();
+        ScoreHighscore = score;
+        PlayerPrefs.SetInt("ScoreHighscore", 0);
     }
 }
