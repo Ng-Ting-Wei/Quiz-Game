@@ -129,16 +129,16 @@ public class DoorQuestion : MonoBehaviour
                     buttons[1].GetComponentInChildren<Text>().text = "Island"; //correct
                     buttons[2].GetComponentInChildren<Text>().text = "Sea";
                     buttons[3].GetComponentInChildren<Text>().text = "Floating Castle";
-                    correct = 3;
+                    correct = 1;
                     break;
                 case 12:
                     question.text = "When is Singapore's National Day?";
-                    //Monday, 8 August**/ Monday, 7 August/ Monday, 10 August/ Monday, 9 August
-                    buttons[0].GetComponentInChildren<Text>().text = "8th August"; //correct
+                    //Monday, 8 August/ Monday, 7 August/ Monday, 10 August/ Monday, 9 August**
+                    buttons[0].GetComponentInChildren<Text>().text = "8th August"; 
                     buttons[1].GetComponentInChildren<Text>().text = "7th August";
                     buttons[2].GetComponentInChildren<Text>().text = "10th August";
-                    buttons[3].GetComponentInChildren<Text>().text = "9th August";
-                    correct = 0;
+                    buttons[3].GetComponentInChildren<Text>().text = "9th August"; //correct
+                    correct = 3;
                     break;
                 case 11:
                     question.text = "What planet do we live on?";
@@ -266,7 +266,7 @@ public class DoorQuestion : MonoBehaviour
                     break;
                 case 18:
                     question.text = "Which of the following is not true about humans?";
-                    //Having more than 2 lungs, Having more than 1 heart. We hibernate**, All of the Above
+                    //Having more than 2 lungs, Having more than 1 heart. We hibernate, All of the Above**
                     buttons[0].GetComponentInChildren<Text>().text = "Having more than 2 lungs";
                     buttons[1].GetComponentInChildren<Text>().text = "Having more than 1 heart";
                     buttons[2].GetComponentInChildren<Text>().text = "We hibernate";
@@ -275,7 +275,7 @@ public class DoorQuestion : MonoBehaviour
                     break;
                 case 17:
                     question.text = "What do all nations have in common?";
-                    //A leader, People, Resources, A God
+                    //A leader, People**, Resources, A God
                     buttons[0].GetComponentInChildren<Text>().text = "A leader";
                     buttons[1].GetComponentInChildren<Text>().text = "People"; //correct
                     buttons[2].GetComponentInChildren<Text>().text = "Resources";
@@ -286,9 +286,9 @@ public class DoorQuestion : MonoBehaviour
                     question.text = "What do all Singaporeans have in common?";
                     //SingPass**, National Service, Nerds, Freedom!
                     buttons[0].GetComponentInChildren<Text>().text = "SingPass"; //correct
-                    buttons[1].GetComponentInChildren<Text>().text = "People";
-                    buttons[2].GetComponentInChildren<Text>().text = "Resources";
-                    buttons[3].GetComponentInChildren<Text>().text = "A God";
+                    buttons[1].GetComponentInChildren<Text>().text = "National Service";
+                    buttons[2].GetComponentInChildren<Text>().text = "Nerds";
+                    buttons[3].GetComponentInChildren<Text>().text = "Freedom!";
                     correct = 0;
                     break;
                 case 15:
@@ -506,7 +506,7 @@ public class DoorQuestion : MonoBehaviour
                     correct = 0;
                     break;
                 case 12:
-                    question.text = "How did hitler die?";
+                    question.text = "How did Hitler die?";
                     //Killed in Action, Suicide**, Hanged, sentence to death.
                     buttons[0].GetComponentInChildren<Text>().text = "Killed in Action";
                     buttons[1].GetComponentInChildren<Text>().text = "Suicide"; //correct
@@ -515,7 +515,7 @@ public class DoorQuestion : MonoBehaviour
                     correct = 1;
                     break;
                 case 11:
-                    question.text = "When did Germany attack russia?";
+                    question.text = "When did Germany attack Russia?";
                     //12 June 1942, 28 July 1941, 12 June 1941, 22 June 1941**
                     buttons[0].GetComponentInChildren<Text>().text = "12 June 1942";
                     buttons[1].GetComponentInChildren<Text>().text = "28 July 1941";
@@ -524,7 +524,7 @@ public class DoorQuestion : MonoBehaviour
                     correct = 3;
                     break;
                 case 10:
-                    question.text = "During world war II, how did Germany beat France?";
+                    question.text = "During World War II, how did Germany beat France?";
                     //Smashed through the Maginot Line, Hit the from behind, Invaded through belgium**, attack from italy
                     buttons[0].GetComponentInChildren<Text>().text = "Smashed through the Maginot Line";
                     buttons[1].GetComponentInChildren<Text>().text = "Hit the from behind Beans";
@@ -551,7 +551,7 @@ public class DoorQuestion : MonoBehaviour
                     correct = 2;
                     break;
                 case 7:
-                    question.text = "When was christianity founded?";
+                    question.text = "When was Christianity founded?";
                     //1st century**, 2nd century, 3rd century, 4th century
                     buttons[0].GetComponentInChildren<Text>().text = "1st century"; //correct
                     buttons[1].GetComponentInChildren<Text>().text = "2nd century";
@@ -587,7 +587,7 @@ public class DoorQuestion : MonoBehaviour
                     correct = 0;
                     break;
                 case 3:
-                    question.text = "When did the Gauls sack rome?";
+                    question.text = "When did the Gauls sack Rome?";
                     //July 18,387 B.C**, Jun 18,384 B.C, July 16,387 B.C, Jun 18,388 B.C
                     buttons[0].GetComponentInChildren<Text>().text = "LJuly 18,387 B.Cettuce"; //correct
                     buttons[1].GetComponentInChildren<Text>().text = "Jun 18,384 B.C";
