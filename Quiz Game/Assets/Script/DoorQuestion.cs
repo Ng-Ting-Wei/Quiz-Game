@@ -25,6 +25,8 @@ public class DoorQuestion : MonoBehaviour
     public Button[] buttons;
     public int correct;
     public int option;
+    public AudioSource doorOpens;
+    public AudioClip doorOpenSound;
 
     private void Start()
     {
@@ -644,8 +646,9 @@ public class DoorQuestion : MonoBehaviour
         {            
             if (answered == false)
             {
-            GM.score += 5;
-            answered = true;
+                GM.score += 5;
+                answered = true;
+                doorOpens.PlayOneShot(doorOpenSound);
             }
             open = true;
             pc.froze = false;
@@ -659,6 +662,7 @@ public class DoorQuestion : MonoBehaviour
             {
                 GM.score += 50;
                 answered = true;
+                doorOpens.PlayOneShot(doorOpenSound);
             }
             open = true;
             pc.froze = false;
@@ -672,6 +676,7 @@ public class DoorQuestion : MonoBehaviour
             {
                 GM.score += 500;
                 answered = true;
+                doorOpens.PlayOneShot(doorOpenSound);
             }
             open = true;
             pc.froze = false;
